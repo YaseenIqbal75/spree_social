@@ -1,4 +1,6 @@
-<tr>
-  <td><%= link_to Spree.t(:social_authentication_methods), spree.admin_authentication_methods_path %></td>
-  <td><%= Spree.t(:social_authentication_methods_description) %></td>
-</tr>
+<% if (current_spree_user.present? && current_spree_user.admin? ) %>
+  <tr>
+    <td><%= link_to Spree.t(:social_authentication_methods), spree.admin_authentication_methods_path %></td>
+    <td><%= Spree.t(:social_authentication_methods_description) %></td>
+  </tr>
+<% end %>
