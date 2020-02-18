@@ -1,7 +1,8 @@
-<% content_for :page_title do %>
-  <%= Spree.t(:social_authentication_methods) %>
+<% if (current_spree_user.present? && current_spree_user.admin? ) %>
+  <% content_for :page_title do %>
+    <%= Spree.t(:social_authentication_methods) %>
+  <% end %>
 <% end %>
-
 <% content_for :page_actions do %>
   <%= button_link_to Spree.t(:new_social_method), new_object_url, icon: 'add', class: 'btn-success', id: 'admin_new_slide_link' %>
 <% end %>
